@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/app/qr/faces/pages/mobile/validadorqr.jsf?D1=1&D2=1&D3=26NA1682520_NDI2001244R1_08-01-2026_P",
-      "permanent": false
-    }
-  ]
-}
