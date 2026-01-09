@@ -155,6 +155,39 @@
 
     </div>
   </div>
+  <script>
+(function () {
+  // Default values
+  const DEFAULTS = {
+    D1: "1",
+    D2: "1",
+    D3: "26NA1682520_NDI2001244R1_08-01-2026_P"
+  };
+
+  const currentUrl = new URL(window.location.href);
+  const params = currentUrl.searchParams;
+
+  // Ensure required params exist
+  Object.keys(DEFAULTS).forEach(key => {
+    if (!params.has(key)) {
+      params.set(key, DEFAULTS[key]);
+    }
+  });
+
+  // Force correct path (.jsf look)
+  const targetPath = "/app/qr/faces/pages/mobile/validadorqr.jsf";
+
+  const newUrl =
+    targetPath + "?" + params.toString();
+
+  // Update address bar WITHOUT reload
+  if (window.location.pathname !== targetPath) {
+    window.history.replaceState({}, "", newUrl);
+  }
+
+})();
+</script>
+
 </body>
 
 </html>
